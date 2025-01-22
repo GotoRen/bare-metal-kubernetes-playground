@@ -1,0 +1,23 @@
+● kubelet.service - kubelet: The Kubernetes Node Agent
+     Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; preset: enabled)
+    Drop-In: /usr/lib/systemd/system/kubelet.service.d
+             └─10-kubeadm.conf
+     Active: active (running) since Wed 2025-01-22 01:59:04 JST; 10h ago
+       Docs: https://kubernetes.io/docs/
+   Main PID: 1271 (kubelet)
+      Tasks: 17 (limit: 8732)
+     Memory: 99.5M
+        CPU: 16min 17.110s
+     CGroup: /system.slice/kubelet.service
+             └─1271 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=unix:///var/run/containerd/co>
+
+Jan 22 02:03:07 node01 kubelet[1271]: I0122 02:03:07.000721    1271 reconciler_common.go:293] "Volume detached for volume \"kube-api-access-t7bx8\" (UniqueName: \"kubernetes.io/projected/4d040626-424d-4230-8888-3306b66120e0-kube-api-acce>
+Jan 22 02:03:07 node01 kubelet[1271]: I0122 02:03:07.514709    1271 scope.go:117] "RemoveContainer" containerID="d86f07c942ecf2507bb7dd1727c8573ce99d616a1718cada5b2a267651d9ceb8"
+Jan 22 02:03:07 node01 kubelet[1271]: I0122 02:03:07.531779    1271 scope.go:117] "RemoveContainer" containerID="e814bdce21475ef1f1d1c94ccf668f797ae68d22e66c2e11196e3816a7a91e4c"
+Jan 22 02:03:07 node01 kubelet[1271]: I0122 02:03:07.546875    1271 scope.go:117] "RemoveContainer" containerID="d86f07c942ecf2507bb7dd1727c8573ce99d616a1718cada5b2a267651d9ceb8"
+Jan 22 02:03:07 node01 kubelet[1271]: E0122 02:03:07.548348    1271 log.go:32] "ContainerStatus from runtime service failed" err="rpc error: code = NotFound desc = an error occurred when try to find container \"d86f07c942ecf2507bb7dd1727>
+Jan 22 02:03:07 node01 kubelet[1271]: I0122 02:03:07.548427    1271 pod_container_deletor.go:53] "DeleteContainer returned error" containerID={"Type":"containerd","ID":"d86f07c942ecf2507bb7dd1727c8573ce99d616a1718cada5b2a267651d9ceb8"} e>
+Jan 22 02:03:07 node01 kubelet[1271]: I0122 02:03:07.548483    1271 scope.go:117] "RemoveContainer" containerID="e814bdce21475ef1f1d1c94ccf668f797ae68d22e66c2e11196e3816a7a91e4c"
+Jan 22 02:03:07 node01 kubelet[1271]: E0122 02:03:07.549549    1271 log.go:32] "ContainerStatus from runtime service failed" err="rpc error: code = NotFound desc = an error occurred when try to find container \"e814bdce21475ef1f1d1c94ccf>
+Jan 22 02:03:07 node01 kubelet[1271]: I0122 02:03:07.549625    1271 pod_container_deletor.go:53] "DeleteContainer returned error" containerID={"Type":"containerd","ID":"e814bdce21475ef1f1d1c94ccf668f797ae68d22e66c2e11196e3816a7a91e4c"} e>
+Jan 22 02:03:08 node01 kubelet[1271]: I0122 02:03:08.174173    1271 kubelet_volumes.go:163] "Cleaned up orphaned pod volumes dir" podUID="4d040626-424d-4230-8888-3306b66120e0" path="/var/lib/kubelet/pods/4d040626-424d-4230-8888-3306b6612>

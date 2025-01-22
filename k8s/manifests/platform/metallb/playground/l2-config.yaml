@@ -1,0 +1,19 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: network-pool-for-system
+  namespace: metallb
+spec:
+  addresses:
+    - 192.168.68.230-192.168.68.250
+  autoAssign: true
+  avoidBuggyIPs: false
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: network-pool-for-system
+  namespace: metallb
+spec:
+  ipAddressPools:
+    - network-pool-for-system

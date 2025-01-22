@@ -1,0 +1,37 @@
+# ---
+# apiVersion: metallb.io/v1beta1
+# kind: IPAddressPool
+# metadata:
+#   name: network-pool-for-orenge-cloud
+#   namespace: metallb
+# spec:
+#   addresses:
+#     - 172.15.7.192/26
+#   autoAssign: true
+#   avoidBuggyIPs: true
+# ---
+# apiVersion: metallb.io/v1beta2
+# kind: BGPPeer
+# metadata:
+#   name: worker-node-group
+#   namespace: metallb
+# spec:
+#   myASN: 64522
+#   peerASN: 64512 # BGP router's ASN
+#   peerAddress: 10.10.10.54 # BGP router's external network IPv4
+# ---
+# apiVersion: metallb.io/v1beta1
+# kind: BGPAdvertisement
+# metadata:
+#   name: local
+#   namespace: metallb
+# spec:
+#   ipAddressPools:
+#     - network-pool-for-orenge-cloud
+#   peers:
+#     - worker-node-group
+#   communities:
+#     - 65535:65282 ## RFC1997: NO_ADVERTISE
+#   aggregationLength: 32
+#   aggregationLengthV6: 128
+#   localPref: 100 ## Default: 100

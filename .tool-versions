@@ -1,0 +1,14 @@
+argocd 2.13.0
+direnv 2.35.0
+golang 1.23.3
+helm 3.16.3
+helmfile 0.169.1
+jq 1.7.1
+krew 0.4.4
+kubectl 1.31.5
+kustomize 5.5.0
+pre-commit 3.7.1
+ruby 3.3.5
+stern 1.28.0
+terraform 1.9.8
+yq 4.44.5

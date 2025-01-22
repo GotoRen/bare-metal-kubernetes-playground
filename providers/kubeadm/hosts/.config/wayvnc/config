@@ -1,0 +1,2 @@
+rsa_private_key_file=rsa_key.pem
+use_relative_paths=true

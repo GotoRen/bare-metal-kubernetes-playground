@@ -1,0 +1,25 @@
+● containerd.service - containerd container runtime
+     Loaded: loaded (/lib/systemd/system/containerd.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2025-01-22 01:58:58 JST; 10h ago
+       Docs: https://containerd.io
+    Process: 634 ExecStartPre=/sbin/modprobe overlay (code=exited, status=0/SUCCESS)
+   Main PID: 640 (containerd)
+      Tasks: 62
+     Memory: 107.5M
+        CPU: 8min 44.833s
+     CGroup: /system.slice/containerd.service
+             ├─ 640 /usr/bin/containerd
+             ├─1980 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 78107760d17893b4db26a5ea13b186ad4265db8a90dd9b24f0b1f99e018359fa -address /run/containerd/containerd.sock
+             ├─1981 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id 5a7c42b0e9cb9b4598c75ebff9894a916fb56b82d98e204477d643c031e6ba67 -address /run/containerd/containerd.sock
+             └─2983 /usr/bin/containerd-shim-runc-v2 -namespace k8s.io -id f6683e07d74e5c0fbf57a17e70959fdbd71102fcf979104cc983ec2a2264452e -address /run/containerd/containerd.sock
+
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.521235251+09:00" level=warning msg="Failed to get podSandbox status for container event for sandboxID \"fd00a7fd9cba8b1608a2c36cfc5cd2775f8b93d9fa31ad61ba6c4a3444899d78\":>
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.521418119+09:00" level=info msg="RemovePodSandbox \"fd00a7fd9cba8b1608a2c36cfc5cd2775f8b93d9fa31ad61ba6c4a3444899d78\" returns successfully"
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.522774898+09:00" level=info msg="StopPodSandbox for \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\""
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.541390827+09:00" level=info msg="TearDown network for sandbox \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\" successfully"
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.541498140+09:00" level=info msg="StopPodSandbox for \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\" returns successfully"
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.543038232+09:00" level=info msg="RemovePodSandbox for \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\""
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.543160860+09:00" level=info msg="Forcibly stopping sandbox \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\""
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.561497162+09:00" level=info msg="TearDown network for sandbox \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\" successfully"
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.575605908+09:00" level=warning msg="Failed to get podSandbox status for container event for sandboxID \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\":>
+Jan 22 02:03:31 node01 containerd[640]: time="2025-01-22T02:03:31.575779072+09:00" level=info msg="RemovePodSandbox \"61164c78dcdc88c0285b866e52b41edf2e709a91669ad4474211923d52e6480e\" returns successfully"
