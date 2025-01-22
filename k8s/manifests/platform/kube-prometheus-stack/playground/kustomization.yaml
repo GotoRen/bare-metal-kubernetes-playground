@@ -3,8 +3,10 @@ kind: Kustomization
 labels:
   - pairs:
       app.kubernetes.io/env: playground
+      # app.kubernetes.io/name: kube-prometheus-stack # This is not needed as it is already set in the base.
       app.kubernetes.io/owner: cloud-platform
       app.kubernetes.io/group: monitoring
+      # app.kubernetes.io/managed-by: argocd # This is not needed as it is already set in the base.
     includeTemplates: true
 namespace: monitoring
 helmCharts:
