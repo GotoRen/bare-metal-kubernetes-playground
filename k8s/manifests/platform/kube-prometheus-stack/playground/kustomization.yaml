@@ -3,12 +3,17 @@ kind: Kustomization
 labels:
   - pairs:
       app.kubernetes.io/env: playground
+      app.kubernetes.io/owner: cloud-platform
+      app.kubernetes.io/group: monitoring
     includeTemplates: true
+namespace: monitoring
 helmCharts:
   - name: kube-prometheus-stack
     repo: https://prometheus-community.github.io/helm-charts
-    version: 60.0.2
+    version: 68.3.0
     releaseName: kube-prometheus-stack
     valuesFile: ./values.yaml
     namespace: monitoring
     includeCRDs: true
+resources:
+  - ../base

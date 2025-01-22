@@ -2,20 +2,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 labels:
   - pairs:
+      app.kubernetes.io/name: prometheus-pushgateway
       app.kubernetes.io/env: playground
-      app.kubernetes.io/name: flannel
       app.kubernetes.io/owner: cloud-platform
-      app.kubernetes.io/group: networking
+      app.kubernetes.io/group: monitoring
       app.kubernetes.io/managed-by: argocd
     includeTemplates: true
-namespace: flannel
+namespace: monitoring
 helmCharts:
-  - name: flannel
-    repo: https://flannel-io.github.io/flannel
-    releaseName: flannel
-    version: 0.26.3
+  - name: prometheus-pushgateway
+    repo: https://prometheus-community.github.io/helm-charts
+    releaseName: prometheus-pushgateway
+    version: 2.17.0
     valuesFile: ./values.yaml
-    namespace: flannel
+    namespace: monitoring
     includeCRDs: true
-resources:
-  - ../base

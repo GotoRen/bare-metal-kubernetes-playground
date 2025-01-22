@@ -2,9 +2,3 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./namespace.yaml
-labels:
-  - pairs:
-      app.kubernetes.io/name: metallb
-      app.kubernetes.io/owner: cloud-platform
-      app.kubernetes.io/group: networking
-    includeTemplates: true

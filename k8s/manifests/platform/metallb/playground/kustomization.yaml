@@ -3,15 +3,20 @@ kind: Kustomization
 labels:
   - pairs:
       app.kubernetes.io/env: playground
+      app.kubernetes.io/name: metallb
+      app.kubernetes.io/owner: cloud-platform
+      app.kubernetes.io/group: networking
+      app.kubernetes.io/managed-by: argocd
     includeTemplates: true
+namespace: metallb
 helmCharts:
   - name: metallb
     repo: https://charts.bitnami.com/bitnami
     releaseName: metallb
     version: 6.3.15
-    includeCRDs: true
-    namespace: metallb
     valuesFile: ./values.yaml
+    namespace: metallb
+    includeCRDs: true
 resources:
   - ../base
   - ./l2-config.yaml
