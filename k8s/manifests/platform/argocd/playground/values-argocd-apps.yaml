@@ -263,3 +263,23 @@ extensions: {}
 #          url: https://github.com/argoproj-labs/argocd-example-extension.git
 #      - web:
 #          url: https://github.com/argoproj-labs/argocd-example-extension/releases/download/v0.1.0/extension.tar
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+spec:
+  project: bare-metal-kubernetes-playground
+  destination:
+    namespace: nginx
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: git@github.com:GotoRen/bare-metal-kubernetes-playground.git
+    path: k8s/manifests/services/nginx/playground
+    targetRevision: main
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true

@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx
+  name: metallb
   namespace: argocd
 spec:
   project: bare-metal-kubernetes-playground
   destination:
-    namespace: nginx
+    namespace: metallb
     server: https://kubernetes.default.svc
   source:
     repoURL: git@github.com:GotoRen/bare-metal-kubernetes-playground.git
-    path: k8s/manifests/services/nginx/playground
+    path: k8s/manifests/platform/metallb/playground
     targetRevision: main
   syncPolicy:
     syncOptions:
