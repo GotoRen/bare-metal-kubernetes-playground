@@ -15,6 +15,7 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true # metadata.annotations: Too long: must have at most 262144 bytes を回避する
     automated:
       selfHeal: true
       prune: true
