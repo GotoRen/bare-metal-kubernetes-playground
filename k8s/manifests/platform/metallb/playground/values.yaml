@@ -469,7 +469,7 @@ controller:
   customReadinessProbe: {}
   ## @param controller.logLevel Sets the controller log level. Does not work if the args are overridden
   ##
-  logLevel: info
+  logLevel: debug
   ## @param controller.tlsMinVersion Sets the minimum TLS version for the controller
   ## e.g:
   ## namespace: VersionTLS12
@@ -922,7 +922,7 @@ speaker:
   customReadinessProbe: {}
   ## @param speaker.logLevel Sets the speaker log level. Does not work if the args are overridden
   ##
-  logLevel: "info"
+  logLevel: "debug"
   ## @section FRR Speaker
   frr:
     ## @param speaker.frr.enabled Whether to enable FRR mode
